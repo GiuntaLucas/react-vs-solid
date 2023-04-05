@@ -1,12 +1,18 @@
+import { createSignal } from "solid-js";
+
+export const [search, setSearch] = createSignal('');
+
 export const Search = (props) => {
+
   const handleChange = (e) => {
-    props.handleSearch(e.target.value)
+    setSearch(e.target.value)
+    // props.handleSearch(e.target.value)
   }
   return (
     <>
     <input
       type="text"
-      className="form-control"
+      class="form-control"
       id="search"
       placeholder="Search"
       onKeyUp={handleChange}
